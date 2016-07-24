@@ -20,7 +20,7 @@ while 1:
         GPIO.output(11, 0)
 
         GPIO.setup(11, GPIO.IN)
-       
+
         goodread=True
         watchtime=time.time()
         while GPIO.input(11)==0 and goodread:
@@ -34,7 +34,7 @@ while 1:
                         endtime=time.time()
                         if (endtime-watchtime > timeout):
                                 goodread=False
-       
+
         if goodread:
                 duration=endtime-starttime
                 distance=duration*34000/2
